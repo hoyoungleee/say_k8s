@@ -37,7 +37,7 @@ spring:
             postLogger: true
       routes:
         - id: user-service
-          uri: lb://USER-SERVICE
+          uri: http://user-service.default.svc.cluster.local:8081
           predicates:
             - Path=/user-service/user/doLogin
             - Method=POST
@@ -46,7 +46,7 @@ spring:
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
 
         - id: user-service
-          uri: lb://USER-SERVICE
+          uri: http://user-service.default.svc.cluster.local:8081
           predicates:
             - Path=/user-service/**
           filters:
@@ -55,7 +55,7 @@ spring:
             - AuthorizationHeaderFilter
 
         - id: product-service
-          uri: lb://PRODUCT-SERVICE
+          uri: http://product-service.default.svc.cluster.local:8082
           predicates:
             - Path=/product-service/**
           filters:
@@ -64,7 +64,7 @@ spring:
             - AuthorizationHeaderFilter
 
         - id: ordering-service
-          uri: lb://ORDERING-SERVICE
+          uri: http://ordering-service.default.svc.cluster.local:8083
           predicates:
             - Path=/ordering-service/**
           filters:
