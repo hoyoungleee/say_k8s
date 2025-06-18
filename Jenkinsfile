@@ -124,7 +124,8 @@ pipeline {
                             mkdir -p ~/.docker
                             echo '{"credHelpers": {"${ECR_URL}": "ecr-login"}}' > ~/.docker/config.json
 
-                            docker build -t ${service}:latest ${service}
+                            # Mac 아키텍쳐 문제생길걸 방지하기 위해 보편적으로 기입
+                            docker build --platform linux/amd64 -t ${service}:latest ${service}
                             docker tag ${service}:latest ${ECR_URL}/${service}:latest
                             docker push ${ECR_URL}/${service}:latest
                             """
