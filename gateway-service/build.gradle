@@ -28,6 +28,10 @@ ext {
 }
 
 dependencies {
+
+	//rabitmq 로 공통설정도 받아오게 한다고함.
+	implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
+
 	implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
 
 	compileOnly 'org.projectlombok:lombok'
