@@ -327,6 +327,7 @@ public class UserController {
         return msg;
     }
 
+    // 하이
     @GetMapping("/k8s-stage-test")
     public String k8sStageTest() {
         return "k8s-stage-test";
