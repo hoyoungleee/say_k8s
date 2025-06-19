@@ -151,6 +151,11 @@ pipeline {
                         sh '''
                             cd ..
                             ls -a
+                            # --- 이 부분이 git clone 보다 먼저, 그리고 정확히 이 위치에 있어야 합니다. ---
+                            if [ -d "say4team-k8s" ]; then
+                                echo "Deleting existing say4team-k8s directory..."
+                                rm -rf say4team-k8s
+                            fi
                             git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/hoyoungleee/say4team-k8s.git
                         '''
 
