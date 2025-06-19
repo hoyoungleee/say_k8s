@@ -27,6 +27,7 @@ public class AuthorizationHeaderFilter extends AbstractGatewayFilterFactory {
     @Value("${jwt.secretKey}")
     private String secretKey;
 
+    // ㅎㅇㅎㅇ
     private final List<String> allowUrl = Arrays.asList(
             "/user/create", "/user/doLogin", "/user/refresh", "/user/email-valid", "/user/verify", "/user/kakao", "/user/health-check", "/user/k8s-stage-test",
             "/product/list", "/user/health-check","/product/detail/*",
