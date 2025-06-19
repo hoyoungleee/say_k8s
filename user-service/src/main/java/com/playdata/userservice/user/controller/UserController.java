@@ -274,7 +274,7 @@ public class UserController {
                                 }, 'https://say4team.shop');
                                 window.close();
                             } else {
-                                window.location.href = 'https://say4team.shop';
+                                window.location.href = 'https://api.say4team.shop';
                             }
                         </script>
                         <p>카카오 로그인 처리 중...</p>
