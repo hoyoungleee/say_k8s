@@ -127,7 +127,7 @@ pipeline {
 
                             # Mac 아키텍쳐 문제생길걸 방지하기 위해 보편적으로 기입
                             docker build --platform linux/amd64 -t ${service}:${newTag} ${service}
-                            docker tag ${service}:latest ${ECR_URL}/${service}:${newTag}
+                            docker tag ${service}:${newTag} ${ECR_URL}/${service}:${newTag}
                             docker push ${ECR_URL}/${service}:${newTag}
                             """
                         }
