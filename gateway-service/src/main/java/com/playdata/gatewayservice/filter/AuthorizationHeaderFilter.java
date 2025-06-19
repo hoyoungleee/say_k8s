@@ -42,6 +42,7 @@ public class AuthorizationHeaderFilter extends AbstractGatewayFilterFactory {
     public GatewayFilter apply(Object config) {
         return (exchange, chain) -> {
             String path = exchange.getRequest().getURI().getPath();
+            log.info("path: {}", path);
             AntPathMatcher antPathMatcher = new AntPathMatcher();
 
 
