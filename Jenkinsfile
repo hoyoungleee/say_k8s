@@ -177,7 +177,7 @@ pipeline {
                         // 마지막에 클론한 프로젝트 폴더를 지우는 이유는, 다음 파이프라인 로직을 위해서.
                         // 기존에 폴더가 존재한다면 다음 clone 시에 에러가 발생하면서 파이프라인이 멈춰요.
                         sh """
-                            cd /var/jenkins_home/workspace/orderservice-k8s202506
+                            cd /var/jenkins_home/workspace/say4team-k8s
                             git config user.name "hoyoungleee"
                             git config user.email "ghdud939@gmail.com"
                             git remote -v
