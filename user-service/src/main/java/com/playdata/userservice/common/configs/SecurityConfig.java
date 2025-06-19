@@ -43,6 +43,7 @@ public class SecurityConfig {
                             "/user/email-valid",
                             "/user/verify",
                             "/user/kakao",
+                            "/user/k8s-stage-test",
                             "/actuator/**").permitAll()
                     .anyRequest().authenticated();
         });
